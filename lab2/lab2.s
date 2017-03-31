@@ -271,14 +271,14 @@ end:
 	mov $EXIT_SUCCESS, %ebx
 	int $SYSCALL
 
-	# ----------------------------------------------------------------------------
+  # ----------------------------------------------------------------------------
   #    Multiplication note: Vertical levels of byte weights
-	#    with same number of operands are added within one inner loop iteration
-	#    "mirrored" one is one on the right.
+  #    with same number of operands are added within one inner loop iteration
+  #    "mirrored" one is one on the right.
 	#
   #     o    o    o
   #     o    o    o   *
-  #    ---------
+  #    ------------------
   #    [o]  |o|   o
   #         |o|   o  |o|
   #               o  |o|  [o]
