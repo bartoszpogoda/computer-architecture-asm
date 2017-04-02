@@ -33,8 +33,6 @@ MAX_INPUT_SIZE = 0xFF
 .data
 	dataSize: .byte 0x00
 	lastDataIndex: .byte 0x00	# for faster access in multiplication algorithm
-	readingCounter: .byte 0x00
-	readingAflag: .byte 0x01	# flag that indicates A-reading
 	outputBuffer: .byte 0x00
 
 .bss
@@ -59,36 +57,21 @@ _start:
 	mov $1, %edx
 	int $SYSCALL
 
-	# set up for numberA read
-	movb dataSize, %al
-	movb %al, readingCounter
-	mov $numberA, %ecx
-
-loadingLoop:
-	cmpb $0, (readingCounter)
-	je afterLoadingLoop
-
-	# read one stdin byte to current number
+	# read numberA
 	mov $SYSREAD, %eax
 	mov $STDIN, %ebx
-	mov $1, %edx
+	mov $numberA, %ecx
+	mov $0, %edx
+	movb dataSize, %dl
 	int $SYSCALL
 
-	decb (readingCounter)
-	add $1, %ecx
-	jmp loadingLoop
-
-afterLoadingLoop:
-	# check if both A and B numbers were loaded
-	cmpb $0, (readingAflag)
-	je dataProcessing
-
-	# set up for numberB read
-	decb (readingAflag)
-	mov (dataSize), %al
-	mov %al, (readingCounter)
+	# read numberB
+	mov $SYSREAD, %eax
+	mov $STDIN, %ebx
 	mov $numberB, %ecx
-	jmp loadingLoop
+	mov $0, %edx
+	movb dataSize, %dl
+	int $SYSCALL
 
 dataProcessing:
 	# print data size to STDOUT
