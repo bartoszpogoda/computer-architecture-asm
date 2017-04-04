@@ -173,13 +173,13 @@ afterSubstractionLoop:
 	movb $0, %bl
 multiplicationOuterLoop:
 	cmpb (lastDataIndex), %bl
-	jg writeProduct
+	ja writeProduct
 
 	# in inner loop - %dl 0,1,..,%bl - loop through pairs on given weight
 	movb $0, %dl
 multiplicationInnerLoop:
 	cmpb %bl, %dl
-	jg afterMultiplicationInnerLoop
+	ja afterMultiplicationInnerLoop
 
 	# ------------- FROM THE LEFT ------------------------------------------------
 	# multiply numberA[%dl] and numberB[%bl-%dl]
