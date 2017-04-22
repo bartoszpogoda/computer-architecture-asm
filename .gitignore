@@ -1,7 +1,2 @@
-# Files without extension
-*
-!/**/
-!*.*
-
 # Object files
 *.o

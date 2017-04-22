@@ -1,0 +1,4 @@
+.align 32
+.data
+  .global asmNumber
+  asmNumber: .byte 0x15,0xcd,0x5b,0x07
