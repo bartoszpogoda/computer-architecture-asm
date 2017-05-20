@@ -51,3 +51,16 @@ Where:
  Time measurments for write, printf C-functions using function implemented in **Task 2**. Also measurments of MOV memory operation time.
 #### Details:
 * times are given in processor cycles
+
+## Lab classes 4
+ FPU (Floating Point Unit)
+### Task 1
+ Set of functions to operate on control and status registers. 
+### Task 2
+ Force two FPU exceptions and prove their occurence (show status register)
+### Task 3
+ Change the precision of the FPU operations and prove it has changed. 
+### Task 4
+ Change rounding mode of the FPU operations and prove it has changed.
+
+
