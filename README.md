@@ -64,3 +64,12 @@ Where:
  Change rounding mode of the FPU operations and prove it has changed.
 
 
+## Lab classes 5
+ Some fun with MMX
+### Task
+ Given a C programm that loads, prints the image implement a filter function that will perform pixel operations (with minimal loss of information). `p(i) = p(i) + p(i + T)*alpha` where `p(i)` is a pixel on `i`'th position, `i` is in `[0,width*height]` range, `T` is some chosen translation value and `alpha` is chosen constant in `(0,1)` range. 
+ 
+ Parameters should be picked to make translation as easy to compute on MMX as possible. (MMX doesn't support division)
+ 
+ Filter function should be implemented both in C and in assembly language - using MMX instruction set support - (SIMD single instrunction multiple data). Time results for functions described above should be then compared.
+
