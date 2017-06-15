@@ -72,4 +72,14 @@ Where:
  Parameters should be picked to make translation as easy to compute on MMX as possible. (MMX doesn't support division)
  
  Filter function should be implemented both in C and in assembly language - using MMX instruction set support - (SIMD single instrunction multiple data). Time results for functions described above should be then compared.
+ 
+ 
+## Lab classes 6
+ Cache
+### Task 1
+ To show that cache memory is built with lines of fixed width.
+### Task 2
+ To analyse how size of memory block affects the cache's miss ratio on some operation.
+### Task 3
+ To compare times of 2d matrix iterations: row after row, column after column. (Matrix should be bigger than cache memory)
 
