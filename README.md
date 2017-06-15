@@ -77,7 +77,7 @@ Where:
 ## Lab classes 6
  Cache
 ### Task 1
- Sshow that cache memory is built with lines of fixed width.
+ Show that cache memory is built of lines of fixed width.
 ### Task 2
  Analyse how size of memory block affects the cache's miss ratio on some operation.
 ### Task 3
