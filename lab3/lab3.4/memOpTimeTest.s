@@ -16,7 +16,7 @@ memOpTimeTest:
 	xor %eax, %eax
 	cpuid						# force processor to fnish current operations
 	rdtsc						# read processor's time-stamp counter (64b) to [%edx:%eax]
-	mov %eax, %ebx	# measured operation - store younger 32b of TSC in %eax
+	mov %eax, %ebx					# measured operation - store younger 32b of TSC in %ebx
 	xor %eax, %eax
 	cpuid
 	rdtsc						# read processor's time-stamp counter (64b) to [%edx:%eax]
